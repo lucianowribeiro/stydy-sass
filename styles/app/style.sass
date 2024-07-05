@@ -1,0 +1,64 @@
+@use 'reset'
+@mixin shadow($color: reset.$text-color)
+  box-shadow: 0 0 10px $color
+button
+  color: reset.$text-color
+  background-color: reset.$secondary-color
+  border-radius: 0.3rem
+  padding: 0.5rem
+  border: none
+  cursor: pointer
+
+header
+  padding: 1.5rem
+  background-color: reset.$primary-color
+  ul
+    display: flex
+    justify-content: space-between
+    align-items: center
+    h1
+      color: reset.$secondary-color
+      font-weight: bold
+  @include shadow()
+
+aside.menu
+  background-color: reset.$primary-color
+  z-index: 1
+  position: absolute
+  left: 0
+  top: 5rem
+  height: calc( 100vh - 5rem)
+  display: none
+  max-width: 10%
+  min-width: 10rem
+  & ul li button
+    width: 100%
+    margin-bottom: 0.5rem
+    border-radius: 0
+  @include shadow()
+
+section
+  height: 85vh
+  article
+    display: flex
+    justify-content: center
+    img
+      margin: 3rem
+      width: 15rem
+    h2
+      margin-top: 6rem
+      font-weight: bold
+
+p.description
+  color: reset.$text-color
+  padding: 3rem
+
+footer
+  background-color: reset.$primary-color
+  color: reset.$secondary-color
+  font-weight: bold
+  height: 4rem
+  width: 100%
+  text-align: center
+  padding-top: 1.2rem
+  @include shadow($color: reset.$primary-color)
